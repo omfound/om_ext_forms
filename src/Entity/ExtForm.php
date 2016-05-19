@@ -216,7 +216,15 @@ class ExtForm extends ContentEntityBase implements ExtFormInterface {
       ->setReadOnly(TRUE);
 
     // Add path alias
-    $fields['path'] = BaseFieldDefinition::create('path');
+    $fields['path'] = BaseFieldDefinition::create('path')
+      ->setLabel(t('URL alias'))
+      ->setTranslatable(TRUE)
+      ->setDisplayOptions('form', [
+        'type' => 'path',
+        'weight' => 30,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setCustomStorage(TRUE);
 
     // Name field for the contact.
     // We set display options for the view as well as the form.
