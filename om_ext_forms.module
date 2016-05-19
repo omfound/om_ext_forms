@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains Drupal\om_ext_forms\om_ext_forms.module.
+ */
+
+/**
+ * @defgroup om_ext_forms Content Entity
+ * @{
+ * Implement a Content entity for External Forms.
+ *
+ * This module creates a custom content entity to allow for easy insertion of
+ * external forms in Drupal 8.
+ *
+ * }
+ */
+
+
+function om_ext_forms_theme() {
+  $items = array(
+    'jot_form' => array(
+      'variables' => array('jot_form' => ''),
+    )
+  );
+
+  return $items;
+}
+
+function theme_om_ext_forms_fetched_form($variables) {
+  print 'in here';
+  dsm('testing');
+  dsm($variables);
+  //$variables['fetched_form'] = $variables['element']['#fetched_form'];
+}

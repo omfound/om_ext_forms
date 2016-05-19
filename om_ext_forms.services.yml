@@ -1,0 +1,6 @@
+services:
+  om_ext_forms.admin_path.route_subscriber:
+    class: Drupal\om_ext_forms\EventSubscriber\ExtFormsRouteSubscriber
+    arguments: ['@config.factory']
+    tags:
+      - { name: event_subscriber }

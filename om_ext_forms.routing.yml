@@ -1,0 +1,69 @@
+# Route name can be used in sevaral place (links, redirects, local actions etc.)
+entity.om_ext_forms_ext_form.canonical:
+  path: '/forms/{om_ext_forms_ext_form}'
+  defaults:
+  # Calls the view controller, defined in the annotation of the ext form entity
+    _entity_view: 'om_ext_forms_ext_form'
+    _title: 'Form'
+  requirements:
+    _permission: 'view external form entity'
+  # Calls the access controller of the entity, $operation 'view'
+  #_entity_access: 'om_ext_forms_ext_form.view'
+
+entity.om_ext_forms_ext_form.collection:
+  path: '/forms/list'
+  defaults:
+  # Calls the list controller, defined in the annotation of the ext form entity.
+    _entity_list: 'om_ext_forms_ext_form'
+    _title: 'Form Listing'
+  options:
+    _ext_forms_operation_route: TRUE
+  requirements:
+  # Checks for permission directly.
+    _permission: 'view external form entity'
+
+om_ext_forms.ext_form_add:
+  path: '/forms/add'
+  defaults:
+  # Calls the form.add controller, defined in the ext form entity.
+    _entity_form: om_ext_forms_ext_form.add
+    _title: 'Add External Form'
+  options:
+    _ext_forms_operation_route: TRUE
+  requirements:
+    _permission: 'add external form entity'
+    #_entity_create_access: 'om_ext_forms_ext_form'
+
+entity.om_ext_forms_ext_form.edit_form:
+  path: '/forms/{om_ext_forms_ext_form}/edit'
+  defaults:
+  # Calls the form.edit controller, defined in the ext form entity.
+    _entity_form: om_ext_forms_ext_form.edit
+    _title: 'Edit External Form'
+  options:
+    _ext_forms_operation_route: TRUE
+  requirements:
+    _permission: 'edit external form entity'
+    #_entity_access: 'om_ext_forms_ext_form.edit'
+
+entity.om_ext_forms_ext_form.delete_form:
+  path: '/forms/{om_ext_forms_ext_form}/delete'
+  defaults:
+    # Calls the form.delete controller, defined in the ext form entity.
+    _entity_form: om_ext_forms_ext_form.delete
+    _title: 'Delete External Form'
+  options:
+    _ext_forms_operation_route: TRUE
+  requirements:
+    _permission: 'delete external form entity'
+    #_entity_access: 'om_ext_forms_ext_form.delete'
+
+om_ext_forms.ext_form_settings:
+  path: 'admin/structure/om_ext_forms_ext_form_settings'
+  defaults:
+    _form: '\Drupal\om_ext_forms\Form\ExtFormSettingsForm'
+    _title: 'External Form Settings'
+  options:
+    _ext_forms_operation_route: TRUE
+  requirements:
+    _permission: 'administer external form entity'

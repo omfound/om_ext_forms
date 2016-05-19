@@ -1,0 +1,11 @@
+# All action links for this module
+
+om_ext_forms.google_form_add:
+  # Which route will be called by the link
+  route_name: om_ext_forms.google_form_add
+  title: 'Add Form'
+
+  # Where will the link appear, defined by route name.
+  appears_on:
+    - entity.om_ext_forms_google_form.collection
+    - entity.om_ext_forms_google_form.canonical

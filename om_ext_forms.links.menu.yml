@@ -1,0 +1,12 @@
+# Define the menu links for this module
+
+entity.om_ext_forms_ext_form.collection:
+  title: 'Forms Listing'
+  route_name: entity.om_ext_forms_ext_form.collection
+  description: 'List Forms'
+  weight: 10
+om_ext_forms_ext_form.admin.structure.settings:
+  title: External Form Settings
+  description: 'Configure External Form entity'
+  route_name:  om_ext_forms.ext_form_settings
+  parent: system.admin_structure

@@ -1,0 +1,22 @@
+# Define the 'local' links for the module
+
+ext_form.settings_tab:
+  route_name: om_ext_forms.ext_form_settings
+  title: Settings
+  base_route: om_ext_forms.ext_form_settings
+
+ext_form.view:
+  route_name: entity.om_ext_forms_ext_form.canonical
+  base_route: entity.om_ext_forms_ext_form.canonical
+  title: View
+
+ext_form.page_edit:
+  route_name: entity.om_ext_forms_ext_form.edit_form
+  base_route: entity.om_ext_forms_ext_form.canonical
+  title: Edit
+
+ext_form.delete_confirm:
+  route_name:  entity.om_ext_forms_ext_form.delete_form
+  base_route:  entity.om_ext_forms_ext_form.canonical
+  title: Delete
+  weight: 10
