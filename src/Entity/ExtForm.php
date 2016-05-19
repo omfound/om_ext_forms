@@ -215,6 +215,9 @@ class ExtForm extends ContentEntityBase implements ExtFormInterface {
       ->setDescription(t('The UUID of the Ext Form entity.'))
       ->setReadOnly(TRUE);
 
+    // Add path alias
+    $fields['path'] = BaseFieldDefinition::create('path');
+
     // Name field for the contact.
     // We set display options for the view as well as the form.
     // Users with correct privileges can change the view and edit configuration.
