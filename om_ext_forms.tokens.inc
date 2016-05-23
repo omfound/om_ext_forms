@@ -18,8 +18,8 @@ function om_ext_forms_token_info() {
 }
 
 function om_ext_forms_tokens($type, $tokens, array $data, array $options, \Drupal\Core\Render\BubbleableMetadata $bubbleable_metadata) {
+  $replacements = array();
   if ($type == 'om-ext-forms-ext-form' && !empty($data['om_ext_forms_ext_form'])) {
-    $replacements = array();
     foreach ($tokens as $name => $original) {
       switch ($name) {
         case 'name':
